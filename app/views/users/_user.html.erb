@@ -1,4 +1,7 @@
-<table class="table table-user">
+<!--<div class="container">-->
+  <!--<div class="row">-->
+  <!--  <div class="col-md-8">-->
+<table>
   <h2>User info</h2>
   <thead>
     <tr>
@@ -7,19 +10,27 @@
   </thead>
   <tbody>
     <tr>
-      <th>Name</th>
-      <th><%= user.name %></th>
+      <!--<div class="col-md-8">-->
+      <td>Name</td>
+      <td><%= user.name %></td>
     </tr>
     <tr>
-      <th>Introduction</th>
-      <th><%= user.introduction %></th>
+      <!--<div class="col-md-8">-->
+      <td>Introduction</td>
+      <td><%= user.introduction %></td>
     </tr>
+    </tbody>
+  </table>
     <tr>
-      <th colspan="2">
-        <%= link_to edit_user_path(current_user), class:"btn btn-default btn-block" do %>
-        <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
-      <% end %>
-      </th>
+      <td colspan="2">
+        <% if current_user.id == user.id %>
+         <%= link_to edit_user_path(current_user), class:"btn btn-default btn-block" do %>
+          <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+         <% end %>
+        <% else %>
+         <%= link_to edit_user_path(user.id), class:"btn btn-default btn-block" do  %>
+          <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+         <% end %>
+        <% end %>
+      </td>
     </tr>
-  </tbody>
-</table>

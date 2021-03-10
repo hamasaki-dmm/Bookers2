@@ -21,7 +21,7 @@
   box-sizing: border-box;;
  }
 clearfix::after {
-  content: "";
+  content: "fas fa-user-cog";
   display: block;
   clear: both;
 }
